@@ -1,0 +1,22 @@
+baseURL = 'http://blog.micro-nova.com/'
+languageCode = 'en-us'
+title = 'Micro-Nova Engineering Blog'
+
+contentdir = "content"
+publishdir = "public"
+builddrafts = true
+canonifyurls = true
+author = "admin"
+theme = "pixyll"
+# disqusShortname = "micronova-blog"
+
+
+[indexes]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  search_engine = true
+  # google_analytics_id = "XX-XXXXXXXX-X"
+  # twitter_username = "username"
+  paginate = true
