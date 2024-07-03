@@ -79,7 +79,7 @@ resource "google_project_iam_binding" "static_site_bucket" {
 
   condition {
     title      = "only_static_bucket_contents"
-    expression = "resource.type == 'storage.googleapis.com/Object' && resource.name.startsWith('projects/_/buckets/${google_storage_bucket.static_site.name}/')"
+    expression = "resource.name.startsWith('projects/_/buckets/${google_storage_bucket.static_site.name}')"
   }
 }
 

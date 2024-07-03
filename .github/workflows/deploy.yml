@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+        with:
+          submodules: 'true'
       - name: log in to GCP
         id: auth
         uses: google-github-actions/auth@v2
@@ -24,8 +26,8 @@ jobs:
       - name: 'Set up gcloud'
         uses: 'google-github-actions/setup-gcloud@v2'
       - name: Build & deploy site
-        steps:
-        - run: apt install hugo
-        - run: hugo
-        - run: hugo deploy
-        - run: gcloud compute url-maps invalidate-cdn-cache blog-prod --path "/*" --async
+        run: |
+          sudo apt install hugo
+          hugo
+          hugo deploy
+          gcloud compute url-maps invalidate-cdn-cache blog-prod --path "/*" --async
