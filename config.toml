@@ -1,4 +1,4 @@
-baseURL = 'http://blog.micro-nova.com/'
+baseURL = 'https://blog.micro-nova.com/'
 languageCode = 'en-us'
 title = 'Micro-Nova Engineering Blog'
 
@@ -20,3 +20,12 @@ theme = "pixyll"
   # google_analytics_id = "XX-XXXXXXXX-X"
   # twitter_username = "username"
   paginate = true
+
+[deployment]
+
+[[deployment.targets]]
+# An arbitrary name for this target.
+name = "production"
+
+# URL specifies the Go Cloud Development Kit URL to deploy to. Examples:
+URL = "gs://blog.micro-nova.com"
