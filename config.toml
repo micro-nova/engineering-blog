@@ -4,7 +4,6 @@ title = 'Micro-Nova Engineering Blog'
 
 contentdir = "content"
 publishdir = "public"
-builddrafts = true
 canonifyurls = true
 theme = "hugo-ficurinia"
 defaultContentLanguage = "en"
