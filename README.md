@@ -1,6 +1,6 @@
 # `engineering-blog`
 
-This repo generates and deploys Micro-Nova's engineering blog. Posts are stored as Markdown, rendered using [Hugo](https://gohugo.io/), and deployed to an upstream object store & CDN using GitHub Actions. Infrastructure in GCP is configured using [OpenTofu](https://opentofu.org/) and stored in `opentofu/`.
+This repo generates and deploys Micro-Nova's engineering blog. Posts are stored as Markdown, rendered using [Hugo](https://gohugo.io/), and deployed to an upstream object store & CDN using GitHub Actions. Infrastructure in GCP is configured using [OpenTofu](https://opentofu.org/) and stored in `opentofu/`. We're currently using [`hugo-ficurinia`](https://gitlab.com/gabmus/hugo-ficurinia) as the theme; check out its docs too.
 
 ## How to add a blog post
 
