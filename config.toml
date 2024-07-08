@@ -6,26 +6,51 @@ contentdir = "content"
 publishdir = "public"
 builddrafts = true
 canonifyurls = true
-author = "admin"
-theme = "pixyll"
-# disqusShortname = "micronova-blog"
-
+theme = "hugo-ficurinia"
+defaultContentLanguage = "en"
+copyright = "Micro-Nova"
 
 [indexes]
   category = "categories"
   tag = "tags"
 
 [params]
-  search_engine = true
-  # google_analytics_id = "XX-XXXXXXXX-X"
-  # twitter_username = "username"
-  paginate = true
+  # These params relate largely to the theme. See the theme readme for details.
+  author = "admin"
+  logo = "/micronova_square_logo.png"
+  logoRightOfTitle = true
+  faviconIco = "/favicon.png"
+  favicon = "/favicon.png"
+  appletouch = "/micronova_square_logo.png"
+  icon512 = "/micronova_square_logo.png"
+
+# The below is used by the theme. Please see the theme readme for details.
+[menu]
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "https://www.micro-nova.com/about"
+        weight = 10
+    [[menu.main]]
+        identifier = "amplipro"
+        name = "AmpliPro"
+        url = "https://www.amplipro.com"
+        weight = 20
+    [[menu.icons]]
+        identifier = "github"
+        name = "GitHub"
+        url = "https://github.com/micro-nova"
+        weight = 10
+
+# The below is used by the theme. Please see the theme readme for details.
+[outputs]
+    home = ["HTML", "JSON"]
+
 
 [deployment]
+    [[deployment.targets]]
+    # An arbitrary name for this target.
+    name = "production"
 
-[[deployment.targets]]
-# An arbitrary name for this target.
-name = "production"
-
-# URL specifies the Go Cloud Development Kit URL to deploy to. Examples:
-URL = "gs://blog.micro-nova.com"
+    # URL specifies the Go Cloud Development Kit URL to deploy to. Examples:
+    URL = "gs://blog.micro-nova.com"
