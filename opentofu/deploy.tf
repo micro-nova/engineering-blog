@@ -10,7 +10,7 @@ resource "google_iam_workload_identity_pool_provider" "github" {
   workload_identity_pool_id          = google_iam_workload_identity_pool.github.workload_identity_pool_id
   workload_identity_pool_provider_id = "github"
   display_name                       = "Github"
-  description                        = "OIDC identity pool provider for automated deployments from Github -> Cloud Run"
+  description                        = "OIDC identity pool provider for automated deployments from Github -> Object Storage"
   attribute_condition                = "assertion.repository_owner == 'micro-nova' && assertion.repository_id == '${data.github_repository.repo.repo_id}'"
   attribute_mapping = {
     "google.subject"             = "assertion.sub"
@@ -38,7 +38,7 @@ resource "google_service_account_iam_binding" "github" {
 }
 
 resource "google_project_iam_custom_role" "static_site_cdn" {
-  role_id     = "${var.dns_name}_${var.env}_cdn"
+  role_id     = "${var.project}_${var.dns_name}_${var.env}_cdn"
   title       = "invalidate CDN for static site, ${data.github_repository.repo.name}-${var.env}"
   description = "Limited scope role for github to deploy the static site"
   permissions = [
@@ -56,7 +56,7 @@ resource "google_project_iam_binding" "static_site_cdn" {
 }
 
 resource "google_project_iam_custom_role" "static_site_bucket" {
-  role_id     = "${var.dns_name}_${var.env}_bucket"
+  role_id     = "${var.project}_${var.dns_name}_${var.env}_bucket"
   title       = "deploy static site to bucket, ${data.github_repository.repo.name}-${var.env}"
   description = "Limited scope role for github to deploy the static site"
   permissions = [

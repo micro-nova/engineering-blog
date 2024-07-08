@@ -1,5 +1,5 @@
 resource "google_certificate_manager_certificate" "default" {
-  name = "${var.dns_name}-${var.env}" # the regex for this resource is restrictive
+  name = "${var.project}-${var.dns_name}-${var.env}"
   managed {
     domains = [
       google_certificate_manager_dns_authorization.default.domain,
@@ -11,17 +11,17 @@ resource "google_certificate_manager_certificate" "default" {
 }
 
 resource "google_certificate_manager_dns_authorization" "default" {
-  name        = "${var.dns_name}-${var.env}" # the regex for this resource is restrictive
+  name        = "${var.project}-${var.dns_name}-${var.env}"
   description = "The default dnss"
   domain      = "${var.dns_name}.${var.dns_zone_name}"
 }
 
 resource "google_certificate_manager_certificate_map" "certificate_map" {
-  name = "${var.dns_name}-${var.env}" # the regex for this resource is restrictive
+  name = "${var.project}-${var.dns_name}-${var.env}"
 }
 
 resource "google_certificate_manager_certificate_map_entry" "default" {
-  name         = "${var.dns_name}-${var.env}" # the regex for this resource is restrictive
+  name         = "${var.project}-${var.dns_name}-${var.env}"
   map          = google_certificate_manager_certificate_map.certificate_map.name
   certificates = [google_certificate_manager_certificate.default.id]
   matcher      = "PRIMARY"

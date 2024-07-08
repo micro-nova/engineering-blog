@@ -3,6 +3,17 @@ variable "env" {
   type        = string
 }
 
+variable "project" {
+  description = "A short project descriptor. Used for namespacing resources with restrictive name validation."
+  type        = string
+  default     = "engineering"
+
+  validation {
+    condition     = can(regex("^[a-zA-Z0-9]*$", var.project))
+    error_message = "Must be strictly alphanumeric"
+  }
+}
+
 variable "dns_name" {
   description = "The bare dns record used to instantiate various services; does not include the zone."
   type        = string

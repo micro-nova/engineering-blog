@@ -30,4 +30,4 @@ jobs:
           sudo apt install hugo
           hugo
           hugo deploy
-          gcloud compute url-maps invalidate-cdn-cache blog-prod --path "/*" --async
+          gcloud compute url-maps invalidate-cdn-cache engineering-blog-prod --path "/*" --async
