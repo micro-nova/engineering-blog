@@ -16,12 +16,13 @@ copyright = "Micro-Nova"
 [params]
   # These params relate largely to the theme. See the theme readme for details.
   author = "admin"
-  logo = "/micronova_square_logo.png"
+  logo = "/micronova_logo_white.png"
   logoRightOfTitle = true
   faviconIco = "/favicon.png"
   favicon = "/favicon.png"
   appletouch = "/micronova_square_logo.png"
   icon512 = "/micronova_square_logo.png"
+  showRss = false
 
 # The below is used by the theme. Please see the theme readme for details.
 [menu]
@@ -35,7 +36,7 @@ copyright = "Micro-Nova"
         name = "AmpliPro"
         url = "https://www.amplipro.com"
         weight = 20
-    [[menu.icons]]
+    [[menu.main]]
         identifier = "github"
         name = "GitHub"
         url = "https://github.com/micro-nova"

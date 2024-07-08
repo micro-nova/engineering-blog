@@ -7,4 +7,5 @@ This repo generates and deploys [Micro-Nova's engineering blog](https://blog.mic
 1. If you have not already, install `hugo` (might be `sudo apt install hugo`.)
 1. Create the post using `hugo new post/$TITLE.md`
 1. Modify the file in `content/post/$TITLE.md`.
+1. Check out your content using `hugo server`; does everything look correct?
 1. Create a PR & merge it.

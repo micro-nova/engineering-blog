@@ -5,3 +5,4 @@ public
 terraform.tfstate*
 .terraform
 .terraform*
+resources
