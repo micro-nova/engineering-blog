@@ -6,7 +6,7 @@ dark:
   fg: 'white'  # font color
   dim_fg: '#bababa'  # will be used for secondary information like dates and tags
   stroke: '#4f4f4f'  # stroke/border color used mostly in the icon menu tooltip
-  accent: '#0096ff'  # pervasive accent color; "Micro-Nova Blue"
+  accent: '#0096ff'  # pervasive accent color; "MicroNova Blue"
   sidebar:
     bg: '#34363b'  # sidebar background
     fg: 'white'  # sidebar font color
