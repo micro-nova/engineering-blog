@@ -1,13 +1,13 @@
 baseURL = 'https://blog.micro-nova.com/'
 languageCode = 'en-us'
-title = 'Micro-Nova Engineering Blog'
+title = 'MicroNova Engineering Blog'
 
 contentdir = "content"
 publishdir = "public"
 canonifyurls = true
 theme = "hugo-ficurinia"
 defaultContentLanguage = "en"
-copyright = "Micro-Nova"
+copyright = "MicroNova"
 
 [indexes]
   category = "categories"
@@ -15,7 +15,7 @@ copyright = "Micro-Nova"
 
 [params]
   # These params relate largely to the theme. See the theme readme for details.
-  author = "admin"
+  author = "MicroNova"
   logo = "/micronova_logo_white.png"
   logoRightOfTitle = true
   faviconIco = "/favicon.png"
@@ -29,18 +29,18 @@ copyright = "Micro-Nova"
     [[menu.main]]
         identifier = "about"
         name = "About"
-        url = "https://www.micro-nova.com/about"
+        url = "https://www.micro-nova.com/whoweare"
         weight = 10
+    [[menu.main]]
+        identifier = "github"
+        name = "GitHub"
+        url = "https://github.com/micro-nova"
+        weight = 15
     [[menu.main]]
         identifier = "amplipro"
         name = "AmpliPro"
         url = "https://www.amplipro.com"
         weight = 20
-    [[menu.main]]
-        identifier = "github"
-        name = "GitHub"
-        url = "https://github.com/micro-nova"
-        weight = 10
 
 # The below is used by the theme. Please see the theme readme for details.
 [outputs]
