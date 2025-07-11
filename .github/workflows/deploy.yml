@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     environment: prod
     permissions:
-      contents: 'read'
-      id-token: 'write'
+      contents: read
+      id-token: write
+    env:
+      HUGO_VERSION: 0.148.1
     steps:
-      - name: Check out repository code
+      - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          submodules: 'true'
-      - name: log in to GCP
+      - name: Login to GCP
         id: auth
         uses: google-github-actions/auth@v2
         with:
@@ -23,11 +23,15 @@ jobs:
           project_id: ${{ secrets.PROJECT_ID }}
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ secrets.DEPLOY_SERVICE_ACCOUNT }}
-      - name: 'Set up gcloud'
-        uses: 'google-github-actions/setup-gcloud@v2'
-      - name: Build & deploy site
+      - name: Setup GCloud
+        uses: google-github-actions/setup-gcloud@v2
+      - name: Install Hugo CLI
         run: |
-          sudo apt install hugo
-          hugo
-          hugo deploy
-          gcloud compute url-maps invalidate-cdn-cache engineering-blog-prod --path "/*" --async
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_withdeploy_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Build site
+        run: hugo
+      - name: Deploy site
+        run: |
+          hugo deploy \
+          && gcloud compute url-maps invalidate-cdn-cache engineering-blog-prod --path "/*" --async
