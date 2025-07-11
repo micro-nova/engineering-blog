@@ -29,18 +29,18 @@ copyright = "MicroNova"
     [[menu.main]]
         identifier = "about"
         name = "About"
-        url = "https://www.micro-nova.com/about"
+        url = "https://www.micro-nova.com/whoweare"
         weight = 10
+    [[menu.main]]
+        identifier = "github"
+        name = "GitHub"
+        url = "https://github.com/micro-nova"
+        weight = 15
     [[menu.main]]
         identifier = "amplipro"
         name = "AmpliPro"
         url = "https://www.amplipro.com"
         weight = 20
-    [[menu.main]]
-        identifier = "github"
-        name = "GitHub"
-        url = "https://github.com/micro-nova"
-        weight = 10
 
 # The below is used by the theme. Please see the theme readme for details.
 [outputs]
