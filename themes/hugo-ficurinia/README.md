@@ -30,9 +30,10 @@ defaultContentLanguage = "en"
 # you can use markdown inside this field
 copyright = "Some copyright notice - [my license](https://example.com/license)"
 
-paginate = 5  # number of articles per page in the index
 summaryLength = 70  # number of words for article summaries
 
+[pagination]
+    pagerSize = 5  # number of articles per page in the index
 
 [params]
     author = "Gabriele Musco"
@@ -113,6 +114,7 @@ summaryLength = 70  # number of words for article summaries
     umamiWebsiteId = "example-tracking-code"
 
     enableShareOnFediverse = false  # enable a button at the end of an article to share it on the fediverse
+    fediverseAccount = "@username@instance.com"  # Automatically add your username under the post when anyone shares your articles
     tocBeforeImage = false  # show the table of contents before the main article image; default false
 
     # WARNING: deprecated! Use [[menu.icons]] instead, look below
@@ -260,6 +262,8 @@ Every post can have various parameters in the frontmatter, here are some that yo
 
 - `title`: the title of the article
 - `date`: usually automatically populated, holds the date and time of the post creation
+- `lastmod`: if set, will display alongside the original date to signify when the post
+  was last updated
 - `description`: a brief description of the post, useful for SEO optimization
 - `tags`: an array of tags, useful for searching similar articles
 - `image`: a link to a feature image for the article, shown in the preview as well
