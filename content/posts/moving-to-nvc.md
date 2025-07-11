@@ -4,6 +4,12 @@ date: 2025-06-27T15:48:07-04:00
 draft: false
 author: Jimmy Vogel
 description: We recently switched from using GHDL to using NVC as our open-source VHDL simulator of choice. This post discusses why we decided to make the change, the work it required, and how it all turned out.
+tags:
+  - fpga
+  - vhdl
+  - nvc
+  - ghdl
+  - vunit
 ---
 
 We recently switched from using [GHDL](https://github.com/ghdl/ghdl) to using [NVC](https://github.com/nickg/nvc) as our open-source VHDL simulator of choice. This post discusses why we decided to make the change, the work it required, and how it all turned out.
